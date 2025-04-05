@@ -24,7 +24,6 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 	
-	// display list of employees
 	@GetMapping("/")
 	public String viewHomePage(Model model) {
 		return findPaginated(1, "firstName", "asc", model);		
@@ -32,7 +31,6 @@ public class EmployeeController {
 	
 	@GetMapping("/showNewEmployeeForm")
 	public String showNewEmployeeForm(Model model) {
-		// create model attribute to bind form data
 		Employee employee = new Employee();
 		model.addAttribute("employee", employee);
 		return "create_employees";
